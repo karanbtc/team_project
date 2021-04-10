@@ -1,0 +1,17 @@
+= form_tag update_path, :method => :put do
+  - @shifts.each do |shift|
+    = shift.user.fullname
+    .field
+      = text_field_tag "shift[#{shift.id}][timing][mon]", shift.timing["mon"],class: "datepicker", readonly: true
+      = text_field_tag "shift[#{shift.id}][timing][tue]", shift.timing["tue"],class: "datepicker", readonly: true
+      = text_field_tag "shift[#{shift.id}][timing][wed]", shift.timing["wed"],class: "datepicker", readonly: true
+      = text_field_tag "shift[#{shift.id}][timing][thu]", shift.timing["thu"],class: "datepicker", readonly: true
+      = text_field_tag "shift[#{shift.id}][timing][fri]", shift.timing["fri"],class: "datepicker", readonly: true
+      = text_field_tag "shift[#{shift.id}][timing][sat]", shift.timing["sat"],class: "datepicker", readonly: true
+      = text_field_tag "shift[#{shift.id}][timing][sun]", shift.timing["sun"],class: "datepicker", readonly: true
+  = submit_tag "submit"
+
+:javascript
+  $(document).ready(function(){
+    $('.datepicker').datetimepicker();
+  });

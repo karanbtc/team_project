@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      Team Name, #{@team_name}
+    %br/
+    %h1
+      Member Name, #{@user_name}
+    %br/
+    %h1 Timing
+    - @timing.keys.each do |time|
+      = time
+      = @timing[time]

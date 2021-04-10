@@ -1,0 +1,4 @@
+-if @team.present? && @shifts.present?
+  $("#shifts").html("#{escape_javascript(render partial: 'user_shift', locals: { team: @team } )}");
+-else
+  $("#shifts").html("");

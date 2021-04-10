@@ -1,0 +1,22 @@
+= link_to "Teams", teams_path
+%br
+= select_tag(:team_id, options_from_collection_for_select(Team.all, "id", "name"),class: "team_id",:prompt=>"select Team")
+#shifts
+
+:javascript
+  $(document).ready(function(){
+    $('.datepicker').datetimepicker();
+    $(".team_id").change(function(){
+      $.ajax({
+        url: "/find_users",
+        type: 'GET',
+        data: { id: $(this).val() },
+        success: function(response, status, xhr) {
+          
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr, status, error);
+        },
+      });
+    });
+  });

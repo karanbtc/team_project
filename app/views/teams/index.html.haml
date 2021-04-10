@@ -1,0 +1,19 @@
+%h4 Teams
+%link{:href => "https://www.w3schools.com/w3css/4/w3.css", :rel => "stylesheet"}/
+%link{:href => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"}/
+.w3-container
+  = link_to "Create", new_team_path, remote: true
+  = link_to "Shifts", shifts_path
+  = link_to "Sign out", destroy_user_session_path, :method => :delete
+
+  #team_partial
+%table
+  %tr
+    %th Name
+    %th Action
+  -@teams.each do |team|
+    %tr
+      %td=team.name
+      %td
+        = link_to "Edit", edit_team_path(team), remote: true
+        = link_to "Delete", team_path(team), method: :DELETE

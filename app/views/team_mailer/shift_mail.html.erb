@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Team Name, <%= @team_name %></h1><br>
+    <h1>Member Name, <%= @user_name %></h1><br>
+    <h1>Timing</h1>
+    <% @timing.keys.each do |time| %>
+      <%= time %> <%= @timing[time] %>
+    <%end%>
+  </body>
+</html>

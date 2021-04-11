@@ -13,7 +13,8 @@
  *= require select2
  *= require select2-bootstrap
  *= require bootstrap.min
- *= *= require datetimepicker
+ *= require datetimepicker
+ *= require jquery-ui/datepicker
  *= require_tree .
  *= require_self
  */

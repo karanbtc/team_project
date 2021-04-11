@@ -20,7 +20,7 @@
   .field
     = f.label :dob
     %br/
-    = f.text_field :dob, autofocus: true, autocomplete: "DOB", "data-provide" => 'datepicker', class: "datepicker" 
+    = f.text_field :dob, autofocus: true, autocomplete: "DOB", data: { date_format: 'YYYY/MM/DD' }, class: "date", readonly: true
   .field
     = f.label :password
     - if @minimum_password_length
@@ -35,3 +35,8 @@
   .actions
     = f.submit "Sign up"
 = render "users/shared/links"
+
+:javascript
+  $(document).ready(function(){
+    $('.date').datepicker();
+  });

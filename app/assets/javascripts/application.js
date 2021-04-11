@@ -14,10 +14,6 @@
 //= require jquery_ujs
 //= require datetimepicker
 //= require select2
+//= require jquery-ui/datepicker
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function(){
-  $( ".select" ).select2({});
-  $('.datepicker').datetimepicker();
-});

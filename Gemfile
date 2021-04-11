@@ -40,6 +40,8 @@ gem "select2-rails"
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
 end
+gem 'jquery-ui-rails', '5.0.5'
+
 
 
 group :development, :test do
